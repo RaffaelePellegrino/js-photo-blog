@@ -45,16 +45,38 @@ body{
     height: 450px;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    position: relative;
+    box-shadow:  3px 3px rgba(0, 0, 0,0.2);
 }
-
+.card:hover{
+    cursor: pointer;
+    transform: rotate(-15deg);
+    transition: transform 2s ease, box-shadow 0.5s ease;
+    z-index: 100;
+    box-shadow: 8px 8px rgba(0, 0, 0,0.2);
+}
 .card img{
     height: 85%;
     padding: 15px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .card figcaption{
     height: 15%;
     padding: 0px 15px;
     font-size: 13px;
+}
+.card:hover .pin{
+    visibility: hidden;
+}
+.pin{
+    position: absolute;
+    top: -30px;
+    left: 175px;
+    transform: translateX(-50%);
+}
+.pin-obj{
+    width: 65px;
 }
