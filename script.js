@@ -32,7 +32,24 @@ function displayPhotos(photos){
         divCard.append(descrizione)
 
         libreria.appendChild(divCard)
+
+        divCard.addEventListener("click", () => osservaImmagine(photo.url));    
     })
 }
 
+function osservaImmagine(image){
+    const openImage = document.createElement("div");
+    openImage.classList.add("card");
+    openImage.classList.add("apertura");
+
+    const imageOpened = document.createElement("img");
+    imageOpened.src = image;
+    openImage.append(imageOpened)
+
+    document.body.appendChild(openImage)
+
+    openImage.addEventListener("click", () =>{
+        openImage.remove()
+    });
+}
 window.onload = fetchPhotos;
