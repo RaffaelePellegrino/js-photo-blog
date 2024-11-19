@@ -9,11 +9,54 @@
 body{
 	font-family: "Edu AU VIC WA NT Pre", cursive;
 }
-
-header{
+/* Header */
+.contenitore-header{
     display: flex;
     justify-content: center;
-    margin: 20px;
     align-items: center;
-    background-image: url('/i')
+    background-image: url('img/wall.png');
+    height: 100px;
+}
+
+.contenitore-header h1{
+    font-size: 50px;
+}
+
+/* Main */ 
+
+.contenitore{
+    background-image: url('img/cork.png');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.contenitore-card{
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    gap: 25px;
+    justify-content: center;
+}
+.card{
+    width: 350px;
+    background-color: white;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img{
+    height: 80%;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.card figcaption{
+    height: 20%;
+    margin: 0 10px;
+    font-size: 13px;
+    align-items: center;
+    display: flex;
 }
