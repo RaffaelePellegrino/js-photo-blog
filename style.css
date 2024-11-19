@@ -49,11 +49,11 @@ body{
     border-radius: 5px;
     position: relative;
     box-shadow:  3px 3px rgba(0, 0, 0,0.2);
+    transition: transform 2s ease, box-shadow 0.5s ease;
 }
 .card:hover{
     cursor: pointer;
     transform: rotate(-15deg);
-    transition: transform 2s ease, box-shadow 0.5s ease;
     z-index: 100;
     box-shadow: 8px 8px rgba(0, 0, 0,0.2);
 }
