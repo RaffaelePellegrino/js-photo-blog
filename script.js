@@ -28,7 +28,7 @@ function displayPhotos(photos){
         divCard.appendChild(immagine);
         //descrizione immagine
         const descrizione = document.createElement("figcaption")
-        descrizione.textContent = photo.title;
+        descrizione.textContent = photo.title.charAt(0).toUpperCase()+photo.title.slice(1);
         divCard.append(descrizione)
 
         libreria.appendChild(divCard)
