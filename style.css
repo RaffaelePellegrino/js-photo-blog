@@ -26,7 +26,7 @@ body{
 
 .contenitore{
     background-image: url('img/cork.png');
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
@@ -42,21 +42,19 @@ body{
 .card{
     width: 350px;
     background-color: white;
-    height: 350px;
+    height: 450px;
     display: flex;
     flex-direction: column;
 }
 
 .card img{
-    height: 80%;
-    margin: 10px;
+    height: 85%;
+    padding: 15px;
     object-fit: cover;
 }
 
 .card figcaption{
-    height: 20%;
-    margin: 0 10px;
+    height: 15%;
+    padding: 0px 15px;
     font-size: 13px;
-    align-items: center;
-    display: flex;
 }
