@@ -1,0 +1,19 @@
+/* Reset */ 
+
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Edu AU VIC WA NT Pre", cursive;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+    background-image: url('/i')
+}
