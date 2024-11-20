@@ -95,6 +95,7 @@ body{
     z-index: 200;
     transform: none;
     background-color: rgba(0, 0, 0,0.5);
+    display: flex;
 }
 .apertura .pin{
     display: none;
@@ -102,4 +103,36 @@ body{
 
 .apertura:hover{
     transform: none;
+}
+
+
+.arrows-right{
+    position: absolute;
+    top: 50%;
+    right:0;
+    font-size: 30px;
+    border: 1px solid red;
+    transform: translateY(-50%);
+}
+.arrows-left{
+    position: absolute;
+    top: 50%;
+    left:0;
+    font-size: 30px;
+    border: 1px solid red;
+    transform: translateY(-50%);
+}
+
+
+.box-temporaneo{
+    height: 400px; 
+    width: 400px;
+    position: relative;
+}
+
+.apertura img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }

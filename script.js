@@ -38,18 +38,41 @@ function displayPhotos(photos){
 }
 
 function osservaImmagine(image){
+    const sfondo = document.createElement("div");
+    sfondo.classList.add("apertura");
+    console.log("ciao")
     const openImage = document.createElement("div");
-    openImage.classList.add("card");
-    openImage.classList.add("apertura");
+    openImage.classList.add("box-temporaneo");
+    sfondo.appendChild(openImage);
+    console.log(openImage);
+    const arrowRightDiv = document.createElement("div");
+    arrowRightDiv.classList.add("arrows-right")
+    
+    const arrowRight = document.createElement("i");
+    arrowRight.classList.add("fa-solid");
+    arrowRight.classList.add("fa-arrow-right");
+    arrowRightDiv.appendChild(arrowRight)
+
+    openImage.appendChild(arrowRightDiv)
+
+    const arrowLeftDiv = document.createElement("div");
+    arrowLeftDiv.classList.add("arrows-left")
+    
+    const arrowLeft = document.createElement("i");
+    arrowLeft.classList.add("fa-solid");
+    arrowLeft.classList.add("fa-arrow-left");
+    arrowLeftDiv.appendChild(arrowLeft)
+
+    openImage.appendChild(arrowLeftDiv)
 
     const imageOpened = document.createElement("img");
     imageOpened.src = image;
-    openImage.append(imageOpened)
+    openImage.appendChild(imageOpened)
 
-    document.body.appendChild(openImage)
+    document.body.appendChild(sfondo)
 
-    openImage.addEventListener("click", () =>{
-        openImage.remove()
+    sfondo.addEventListener("click", () =>{
+        sfondo.remove()
     });
 }
 window.onload = fetchPhotos;
