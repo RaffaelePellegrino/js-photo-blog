@@ -76,6 +76,8 @@ function osservaImmagine(image,index){
     openImage.appendChild(imageOpened)
 
     document.body.appendChild(sfondo)
+    
+    console.log(tracking)
 
     arrowRightDiv.addEventListener("click", (event) => { 
         event.stopPropagation();
@@ -94,12 +96,21 @@ function osservaImmagine(image,index){
 
 function showNextImage(image){
     tracking += 1
+    if(tracking >= getPhotos.length){
+        tracking = 0;
+    }
     const immagineDopo = getPhotos[tracking].url;
     image.src = immagineDopo
 }
 function showPreviousImage(image){
-    tracking -= 1
-    const immagineDopo = getPhotos[tracking].url;
+    console.log(tracking)
+    if(tracking === 0){
+        tracking += getPhotos.length-1;
+        console.log(tracking)
+    }else{
+        tracking -= 1
+    }
+    const immagineDopo = getPhotos[tracking-1].url;
     image.src = immagineDopo
 }
 window.onload = fetchPhotos;
