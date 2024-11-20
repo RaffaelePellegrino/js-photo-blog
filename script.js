@@ -43,7 +43,7 @@ function displayPhotos(photos){
 }
 
 function osservaImmagine(image,index){
-    tracking = index;
+    tracking = index-1;
     const sfondo = document.createElement("div");
     sfondo.classList.add("apertura");
     console.log("ciao")
@@ -110,7 +110,7 @@ function showPreviousImage(image){
     }else{
         tracking -= 1
     }
-    const immagineDopo = getPhotos[tracking-1].url;
+    const immagineDopo = getPhotos[tracking].url;
     image.src = immagineDopo
 }
 window.onload = fetchPhotos;
