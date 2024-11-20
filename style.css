@@ -110,17 +110,17 @@ body{
     position: absolute;
     top: 50%;
     right:0;
-    font-size: 30px;
-    border: 1px solid red;
+    font-size: 59px;
     transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.2);
 }
 .arrows-left{
     position: absolute;
     top: 50%;
     left:0;
-    font-size: 30px;
-    border: 1px solid red;
+    font-size: 50px;
     transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.2);
 }
 
 
