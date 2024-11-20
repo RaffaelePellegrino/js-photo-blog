@@ -1,9 +1,14 @@
+let getPhotos = [];
+let tracking = 0;
+
 function fetchPhotos() {
     const url = "https://jsonplaceholder.typicode.com/photos?_limit=6";
 
     axios.get(url).then(res =>{
         displayPhotos(res.data);
+        getPhotos = res.data;
         console.log(res.data)
+        console.log(getPhotos)
     })
 }
 
@@ -33,11 +38,12 @@ function displayPhotos(photos){
 
         libreria.appendChild(divCard)
 
-        divCard.addEventListener("click", () => osservaImmagine(photo.url));    
+        divCard.addEventListener("click", () => osservaImmagine(photo.url,photo.id));    
     })
 }
 
-function osservaImmagine(image){
+function osservaImmagine(image,index){
+    tracking = index;
     const sfondo = document.createElement("div");
     sfondo.classList.add("apertura");
     console.log("ciao")
@@ -71,8 +77,29 @@ function osservaImmagine(image){
 
     document.body.appendChild(sfondo)
 
+    arrowRightDiv.addEventListener("click", (event) => { 
+        event.stopPropagation();
+        showNextImage(imageOpened);
+    });
+    arrowLeftDiv.addEventListener("click", (event) => {
+        event.stopPropagation();
+        showPreviousImage(imageOpened);
+    });
+    
+
     sfondo.addEventListener("click", () =>{
         sfondo.remove()
     });
+}
+
+function showNextImage(image){
+    tracking += 1
+    const immagineDopo = getPhotos[tracking].url;
+    image.src = immagineDopo
+}
+function showPreviousImage(image){
+    tracking -= 1
+    const immagineDopo = getPhotos[tracking].url;
+    image.src = immagineDopo
 }
 window.onload = fetchPhotos;
