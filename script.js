@@ -34,7 +34,7 @@ function displayPhotos(photos){
         //descrizione immagine
         const descrizione = document.createElement("figcaption")
         descrizione.textContent = photo.title.charAt(0).toUpperCase()+photo.title.slice(1);
-        divCard.append(descrizione)
+        divCard.appendChild(descrizione)
 
         libreria.appendChild(divCard)
 
@@ -114,3 +114,5 @@ function showPreviousImage(image){
     image.src = immagineDopo
 }
 window.onload = fetchPhotos;
+
+even
